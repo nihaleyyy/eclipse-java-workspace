@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Jv {
+	public static void main(String ar[]) {
+		int m,n,add,sub,mul,opt;
+		float div;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter 1st number");
+		m=s.nextInt();
+		System.out.println("Enter 2nd num");
+		n=s.nextInt();
+		while(true) {
+			System.out.println("Enter 1 for add");
+			System.out.println("Enter 2 for sub");
+			System.out.println("Enter 3 for mul");
+			System.out.println("Enter 4 for div");
+			System.out.println("Enter 5 for exit");
+			opt=s.nextInt();
+			switch(opt) {
+			case 1:
+				System.out.println("RESULT= "+add);
+				add=m+n;
+				break;
+			case 2:
+				System.out.println("RESULT= "+sub);
+				sub=m-n;
+				break;
+			case 3:
+				System.out.println("RESULT= "+mul);
+				mul=m*n;
+				break;
+			case 4:
+				System.out.println("RESULT= "+div);
+				div=m/n;
+				break;
+			case 5:
+				System.exit(0);
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,32 @@
+
+public class Static {
+    int a=10;
+    static int b=20;
+	public static void main (String ar[]) {
+		
+		
+		
+		Static h=new Static();
+		Static h1=new Static();
+		System.out.println(h.a);
+		h.hello();
+		h.b=50;
+		h1.b=100;
+		
+		
+		
+		h.a=20;;
+		
+		System.out.println("h.b: "+h.b);
+		
+		
+	}
+	void hello() {
+		
+	}
+	
+	static void hey() {
+		
+	}
+
+}

@@ -1,0 +1,297 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Calc {
+
+	private JFrame frame;
+	private JTextField text;
+	double first;
+	double second;
+	String operations="";
+	String answer="";
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calc window = new Calc();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calc() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		text = new JTextField();
+		text.setText("                                                             ");
+		text.setBounds(0, 0, 434, 28);
+		frame.getContentPane().add(text);
+		text.setColumns(10);
+		
+		JButton clear = new JButton("C");
+		clear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				text.setText(null);
+			}
+		});
+		clear.setBounds(10, 61, 55, 33);
+		frame.getContentPane().add(clear);
+		
+		JButton doubleZero = new JButton("00");
+		doubleZero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+doubleZero.getText();
+				text.setText(number);
+			}
+		});
+		doubleZero.setBounds(79, 61, 55, 33);
+		frame.getContentPane().add(doubleZero);
+		
+		JButton back = new JButton("\uF0e7");
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String back=null;
+				StringBuilder str=new StringBuilder(text.getText());
+				str.deleteCharAt(str.length()-1);
+				back=str.toString();
+				text.setText(back);
+				}
+		});
+		back.setBounds(151, 61, 55, 33);
+		frame.getContentPane().add(back);
+		
+		JButton one = new JButton("1");
+		one.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number=text.getText()+one.getText();
+				text.setText(number);
+			}
+		});
+		one.setBounds(10, 106, 55, 33);
+		frame.getContentPane().add(one);
+		
+		JButton four = new JButton("4");
+		four.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+four.getText();
+				text.setText(number);
+			}
+		});
+		four.setBounds(10, 150, 55, 33);
+		frame.getContentPane().add(four);
+		
+		JButton seven = new JButton("7");
+		seven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+seven.getText();
+				text.setText(number);
+			}
+		});
+		seven.setBounds(10, 194, 55, 33);
+		frame.getContentPane().add(seven);
+		
+		JButton two = new JButton("2");
+		two.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+two.getText();
+				text.setText(number);
+			}
+		});
+		two.setBounds(79, 105, 55, 33);
+		frame.getContentPane().add(two);
+		
+		JButton five = new JButton("5");
+		five.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+five.getText();
+				text.setText(number);
+			}
+		});
+		five.setBounds(79, 150, 55, 33);
+		frame.getContentPane().add(five);
+		
+		JButton eight = new JButton("8");
+		eight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+eight.getText();
+				text.setText(number);
+			}
+		});
+		eight.setBounds(79, 194, 55, 33);
+		frame.getContentPane().add(eight);
+		
+		JButton three = new JButton("3");
+		three.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+three.getText();
+				text.setText(number);
+			}
+		});
+		three.setBounds(151, 105, 55, 33);
+		frame.getContentPane().add(three);
+		
+		JButton six = new JButton("6");
+		six.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+six.getText();
+				text.setText(number);
+			}
+		});
+		six.setBounds(151, 150, 55, 33);
+		frame.getContentPane().add(six);
+		
+		JButton nine = new JButton("9");
+		nine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+nine.getText();
+				text.setText(number);
+			}
+		});
+		nine.setBounds(151, 194, 55, 33);
+		frame.getContentPane().add(nine);
+		
+		JButton add = new JButton("+");
+		add.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first=Double.parseDouble(text.getText());
+				text.setText("");
+				operations="+";
+			}
+		});
+		add.setBounds(250, 61, 55, 33);
+		frame.getContentPane().add(add);
+		
+		JButton sub = new JButton("-");
+		sub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first=Double.parseDouble(text.getText());
+				text.setText("");
+				operations="-";
+			}
+		});
+		sub.setBounds(250, 106, 55, 33);
+		frame.getContentPane().add(sub);
+		
+		JButton div = new JButton("/");
+		div.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first=Double.parseDouble(text.getText());
+				text.setText("");
+				operations="/";
+			}
+		});
+		div.setBounds(250, 150, 55, 33);
+		frame.getContentPane().add(div);
+		
+		JButton mult = new JButton("*");
+		mult.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first=Double.parseDouble(text.getText());
+				text.setText("");
+				operations="*";}
+		});
+		mult.setBounds(250, 194, 55, 33);
+		frame.getContentPane().add(mult);
+		
+		JButton zero = new JButton("0");
+		zero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String number=text.getText()+zero.getText();
+				text.setText(number);
+			}
+		});
+		zero.setBounds(79, 233, 55, 33);
+		frame.getContentPane().add(zero);
+		
+		JButton dot = new JButton(".");
+		dot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=text.getText()+dot.getText();
+				text.setText(number);
+			}
+		});
+		dot.setBounds(10, 233, 55, 33);
+		frame.getContentPane().add(dot);
+		
+		JButton equal = new JButton("=");
+		equal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double result;
+				second=Double.parseDouble(text.getText());
+				if(operations=="+") {
+					result=first+second;
+					answer=String.valueOf(result);
+					text.setText(answer);
+				}
+				if(operations=="-") {
+					result=first-second;
+					answer=String.valueOf(result);
+					text.setText(answer);
+				}
+				if(operations=="*") {
+					result=first*second;
+					answer=String.valueOf(result);
+					text.setText(answer);
+				}
+				if(operations=="/") {
+					result=first/second;
+					answer=String.valueOf(result);
+					text.setText(answer);
+				}
+
+				if(operations=="%") {
+					result=first%second;
+					answer=String.valueOf(result);
+					text.setText(answer);
+				}
+			}
+		});
+		equal.setBounds(151, 233, 55, 33);
+		frame.getContentPane().add(equal);
+		
+		JButton percent = new JButton("%");
+		percent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first=Double.parseDouble(text.getText());
+				text.setText("");
+				operations="%";
+			}
+		});
+		percent.setBounds(250, 233, 55, 33);
+		frame.getContentPane().add(percent);
+	}
+}

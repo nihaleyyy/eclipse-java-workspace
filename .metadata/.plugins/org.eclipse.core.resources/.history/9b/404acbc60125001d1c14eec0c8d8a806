@@ -1,0 +1,149 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Calc {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calc window = new Calc();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calc() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 115, 63, -87);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setText("                                                             ");
+		textField_1.setBounds(0, 0, 434, 28);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton clear = new JButton("C");
+		clear.setBounds(10, 61, 55, 33);
+		frame.getContentPane().add(clear);
+		
+		JButton doubleZero = new JButton("00");
+		doubleZero.setBounds(79, 61, 55, 33);
+		frame.getContentPane().add(doubleZero);
+		
+		JButton back = new JButton("\uF0e7");
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		back.setBounds(151, 61, 55, 33);
+		frame.getContentPane().add(back);
+		
+		JButton one = new JButton("1");
+		one.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number=one.getText();
+				textField.setText(number);
+			}
+		});
+		one.setBounds(10, 106, 55, 33);
+		frame.getContentPane().add(one);
+		
+		JButton four = new JButton("4");
+		four.setBounds(10, 150, 55, 33);
+		frame.getContentPane().add(four);
+		
+		JButton seven = new JButton("7");
+		seven.setBounds(10, 194, 55, 33);
+		frame.getContentPane().add(seven);
+		
+		JButton two = new JButton("2");
+		two.setBounds(79, 105, 55, 33);
+		frame.getContentPane().add(two);
+		
+		JButton five = new JButton("5");
+		five.setBounds(79, 150, 55, 33);
+		frame.getContentPane().add(five);
+		
+		JButton eight = new JButton("8");
+		eight.setBounds(79, 194, 55, 33);
+		frame.getContentPane().add(eight);
+		
+		JButton three = new JButton("3");
+		three.setBounds(151, 105, 55, 33);
+		frame.getContentPane().add(three);
+		
+		JButton six = new JButton("6");
+		six.setBounds(151, 150, 55, 33);
+		frame.getContentPane().add(six);
+		
+		JButton nine = new JButton("9");
+		nine.setBounds(151, 194, 55, 33);
+		frame.getContentPane().add(nine);
+		
+		JButton add = new JButton("+");
+		add.setBounds(250, 61, 55, 33);
+		frame.getContentPane().add(add);
+		
+		JButton sub = new JButton("-");
+		sub.setBounds(250, 106, 55, 33);
+		frame.getContentPane().add(sub);
+		
+		JButton div = new JButton("/");
+		div.setBounds(250, 150, 55, 33);
+		frame.getContentPane().add(div);
+		
+		JButton mult = new JButton("*");
+		mult.setBounds(250, 194, 55, 33);
+		frame.getContentPane().add(mult);
+		
+		JButton zero = new JButton("0");
+		zero.setBounds(79, 233, 55, 33);
+		frame.getContentPane().add(zero);
+		
+		JButton dot = new JButton(".");
+		dot.setBounds(10, 233, 55, 33);
+		frame.getContentPane().add(dot);
+		
+		JButton equal = new JButton("=");
+		equal.setBounds(151, 233, 55, 33);
+		frame.getContentPane().add(equal);
+		
+		JButton percent = new JButton("%");
+		percent.setBounds(250, 233, 55, 33);
+		frame.getContentPane().add(percent);
+	}
+}

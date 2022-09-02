@@ -1,0 +1,31 @@
+
+public class B extends A{
+	
+	int a;
+	
+	B(){
+		System.out.println("ITS A B CONSTRUCTOR");
+	}
+	void display() {
+		System.out.println("ITS B");
+		
+		a=20;
+		
+		super.a=20;
+		int c=a+super.a;
+		System.out.println(c);
+		
+	}
+	void baseDisplay() {
+		super.display();
+	}
+	
+	public static void main(String[] args) {
+		  B b=new B();
+		  /*b.display();
+		  b.baseDisplay();
+		  */
+		
+	
+	}
+}
